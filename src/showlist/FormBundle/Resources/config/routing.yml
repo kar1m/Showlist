@@ -1,0 +1,19 @@
+HelloTheWorld:
+    path:    /hello-world
+    defaults: { _controller: showlistFormBundle:Form:index }
+ByeTheWorld:
+    path:    /bye-world
+    defaults: { _controller: showlistFormBundle:Form:show }	
+Form_acceuil:
+    path:    /
+    defaults: { _controller: showlistFormBundle:Form:index }
+Form_voir:
+    path:    /article/{id}/{slug}.{format}
+    defaults: { _controller: showlistFormBundle:Form:voir, format:html }	
+    requirements:
+        id:    \d{1}
+        format: html|xml
+Form_ajouter:
+    path:    /ajouter
+    defaults: { _controller: showlistFormBundle:Form:ajouter }
+

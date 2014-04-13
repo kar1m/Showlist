@@ -1,0 +1,51 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>{% block title %}ShowList{% endblock %}</title>
+
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+    {% endblock %}
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="header" class="hero-unit">
+        <h1>ShowList</h1>
+        <p>Follow your favorite TV shows, never miss an episode again ! </p>
+        <form>
+        Email : <input type="text" name="email">
+        Password : <input type="password" name="pwd">
+        <input type="submit" value="Log in">
+        </form>
+        
+      </div>
+
+      
+        </div>
+        <div id="content" class="span9">
+          {% block body %}
+          {% endblock %}
+        </div>
+      </div>
+
+      <hr>
+
+      
+    </div>
+    <div id="footer" style="background-color:#FFFFFF;clear:both;text-align:center;">
+Copyright © Showlist - fil rouge</div>
+    
+
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+  {% endblock %}
+
+  </body>
+</html>

@@ -1,0 +1,4 @@
+showlist_form:
+    resource: "@showlistFormBundle/Resources/config/routing.yml"
+    prefix:   /showlist-form
+

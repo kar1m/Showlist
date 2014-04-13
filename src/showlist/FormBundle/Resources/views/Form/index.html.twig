@@ -1,0 +1,38 @@
+
+
+{% extends "showlistFormBundle::layout.html.twig" %}
+
+{% block title %}
+  Homepage - {{ parent() }}
+{% endblock %}
+
+{% block sdzblog_body %}
+
+  
+  <div id="menu" style="height:200px;width:400px;float:left;">
+  <form>
+  First name: <input type="text" name="firstname"><br>
+  Last name: <input type="text" name="lastname"><br>
+  Email : <input type="text" name="email"><br>
+  Country : <select name="country">
+  <option value="TU">Tunisia</option>
+  <option value="OTH">Other</option>
+  </select>
+
+</select>
+  <br>
+  Gender : &nbsp;
+  <input type="radio" name="sex" label="Gender" value="male">Male
+  &nbsp;&nbsp;&nbsp;
+  <input type="radio" name="sex" value="female">Female
+  <br><br>
+  <input type="submit" value="Sign up!">
+</form>
+</div>
+OR
+<div id="menu" style="height:200px;width:300px;float:left;">
+<p><a class="btn btn-primary btn-large" href="http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2">
+          Connect with Facebook »
+        </a></p>
+</div>
+{% endblock %}
