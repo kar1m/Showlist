@@ -39,10 +39,16 @@ class Comment
 
     /**
     * @ORM\ManyToOne(targetEntity="showlist\FormBundle\Entity\Serie", inversedBy="comments")
-    * @ORM\JoinColumn(nullable=false)
-    *
+    *     
     **/
     private $serie;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="showlist\FormBundle\Entity\Episode", inversedBy="comments")
+    * 
+    *
+    **/
+    private $episode;
 
     /**
     * @ORM\ManyToOne(targetEntity="showlist\FormBundle\Entity\User", inversedBy="comments")
@@ -151,5 +157,28 @@ class Comment
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set episode
+     *
+     * @param \showlist\FormBundle\Entity\Episode $episode
+     * @return Comment
+     */
+    public function setEpisode(\showlist\FormBundle\Entity\Episode $episode = null)
+    {
+        $this->episode = $episode;
+
+        return $this;
+    }
+
+    /**
+     * Get episode
+     *
+     * @return \showlist\FormBundle\Entity\Episode 
+     */
+    public function getEpisode()
+    {
+        return $this->episode;
     }
 }

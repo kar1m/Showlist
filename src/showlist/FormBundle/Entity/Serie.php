@@ -43,6 +43,11 @@ class Serie
     private $comments;
 
     /**
+    *  @ORM\OneToMany(targetEntity="showlist\FormBundle\Entity\Saison", mappedBy="serie")
+    */
+    private $saisons;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -136,5 +141,38 @@ class Serie
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Add saisons
+     *
+     * @param \showlist\FormBundle\Entity\Saison $saisons
+     * @return Serie
+     */
+    public function addSaison(\showlist\FormBundle\Entity\Saison $saisons)
+    {
+        $this->saisons[] = $saisons;
+
+        return $this;
+    }
+
+    /**
+     * Remove saisons
+     *
+     * @param \showlist\FormBundle\Entity\Saison $saisons
+     */
+    public function removeSaison(\showlist\FormBundle\Entity\Saison $saisons)
+    {
+        $this->saisons->removeElement($saisons);
+    }
+
+    /**
+     * Get saisons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSaisons()
+    {
+        return $this->saisons;
     }
 }
